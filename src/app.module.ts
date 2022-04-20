@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConnectionService } from './shared/services/database-connection.service';
 import { UsersModule } from './users/users.module';
+import { BlogModule } from './blog/blog.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { UsersModule } from './users/users.module';
       useClass: DatabaseConnectionService,
     }),
     UsersModule,
+    BlogModule,
   ],
   controllers: [AppController],
   providers: [AppService],
